@@ -33,12 +33,9 @@ end_time = {
 
 hosts = [ "google.com", "youtube.com", "aarnet.edu.au", "unsw.edu.au" ]
 
-# if start_time.tm_mon > (12 - MONTHS_RUNTIME):
-#     end_time["year"] = start_time.tm_year + 1
-# end_time["month"] = start_time.tm_mon + MONTHS_RUNTIME
-end_time["month"] = start_time.tm_mon
-end_time["year"] = start_time.tm_year
-end_time["min"] = start_time.tm_min + 2
+if start_time.tm_mon > (12 - MONTHS_RUNTIME):
+    end_time["year"] = start_time.tm_year + 1
+end_time["month"] = start_time.tm_mon + MONTHS_RUNTIME
 
 print(f"Program started at {asctime(start_time)}, will finish on {end_time['day']} of {month_name[end_time['month']]}, {end_time['year']}")
 print(asctime(start_time))
